@@ -32,10 +32,11 @@
                   <Insets top="50.0" />
                </padding>
             </Label>
-         </children></HBox>
+         </children>
+      </HBox>
       <HBox alignment="CENTER_RIGHT">
          <children>
-            <Button mnemonicParsing="false" text="Administration" textAlignment="JUSTIFY" />
+            <Button id="btnAdministration" mnemonicParsing="false"  onAction="#openAdministration" text="Administration" textAlignment="JUSTIFY" />
          </children>
       </HBox>
       <HBox prefHeight="100.0" prefWidth="200.0">

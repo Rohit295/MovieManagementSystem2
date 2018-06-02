@@ -16,6 +16,15 @@
 
 }
 
+.split-pane-divider {
+	-fx-padding: 0;
+}
+
+.split-pane {
+	-fx-padding: 0;
+	-fx-border-style: none ;
+}
+
 .h2 {
     -fx-font-family: "Verdana";
     -fx-font-size: 20px;

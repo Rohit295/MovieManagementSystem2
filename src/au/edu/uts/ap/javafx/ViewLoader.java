@@ -21,7 +21,8 @@ public class ViewLoader {
                 });
         Parent root = loader.load();
         stage.setTitle(title);
-        stage.setScene(new Scene(root));
+        Scene newScene = new Scene(root);
+        stage.setScene(newScene);
         stage.sizeToScene();
         stage.show();
     }

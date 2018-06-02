@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.media.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import java.net.*?>
 <?import java.util.*?>
@@ -8,17 +11,69 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.image.*?>
 
-<VBox xmlns:fx="http://javafx.com/fxml"
-      fx:controller="controller.KioskController"
-      alignment="center" spacing="10"
-      styleClass="root"
-      prefWidth="800.0"
->
-
-    <Label text="&lt;insert assignment here&gt;"/>
+<VBox alignment="center" spacing="10" styleClass="root" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.KioskController">
 
     <stylesheets>
-        <URL value="@kiosk.css"/>
+        <URL value="@kiosk.css" />
     </stylesheets>
+   <children>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@movie_icon.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" styleClass="h1" text="Movie Kiosk">
+               <font>
+                  <Font size="36.0" />
+               </font>
+               <padding>
+                  <Insets top="50.0" />
+               </padding>
+            </Label>
+         </children></HBox>
+      <HBox alignment="CENTER_RIGHT">
+         <children>
+            <Button mnemonicParsing="false" text="Administration" textAlignment="JUSTIFY" />
+         </children>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Button id="btnExploreCatalogue" minHeight="200.0" minWidth="200.0" mnemonicParsing="false" styleClass="largeButton" text="Explore Catalogue" wrapText="true">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button id="btnCustomerRecord" minHeight="200.0" minWidth="200.0" mnemonicParsing="false" styleClass="largeButton" text="Customer Record" wrapText="true">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </Button>
+            <Button id="btnTopUpCustomer" minHeight="200.0" minWidth="200.0" mnemonicParsing="false" styleClass="largeButton" text="Top-up Account" wrapText="true">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </Button>
+            <Button id="btn_top_up_customer" minHeight="200.0" minWidth="200.0" mnemonicParsing="false" styleClass="largeButton" text="Top-up Account" wrapText="true">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </Button>
+         </children></HBox>
+      <Button id="btn_quit" mnemonicParsing="false" text="Quit" />
+   </children>
 
 </VBox>

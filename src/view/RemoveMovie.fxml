@@ -10,7 +10,7 @@
 <?import javafx.scene.control.cell.*?>
 <?import javafx.scene.image.*?>
 
-<VBox alignment="CENTER" prefHeight="300.0" prefWidth="500.0" spacing="10.0" xmlns:fx="http://javafx.com/fxml" fx:controller="controller.RemoveMovieController">
+<VBox alignment="CENTER" prefHeight="400.0" prefWidth="500.0" spacing="10.0" xmlns:fx="http://javafx.com/fxml" fx:controller="controller.RemoveMovieController">
 
   
     <stylesheets>

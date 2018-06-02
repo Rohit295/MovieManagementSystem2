@@ -29,7 +29,12 @@ public class AddMovieController  {
 	  @FXML 
 	  void addMovie(ActionEvent event) {
 		  kiosk.getCatalogue().addMovie(txtTitle.getText(), Integer.parseInt(txtYear.getText()), txtGenre.getText(), Integer.parseInt(txtPrice.getText()));
+		
 		  txtAddMovieMessage.setText("Added " + txtTitle.getText() + " to the catalogue");
+		  txtTitle.setText("");
+		  txtYear.setText("");
+		  txtGenre.setText("");
+		  txtPrice.setText("");
 	  }
 	  
 

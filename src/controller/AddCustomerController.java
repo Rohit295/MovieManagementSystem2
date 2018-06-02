@@ -28,7 +28,12 @@ public class AddCustomerController {
 	  @FXML 
 	  void addCustomer(ActionEvent event) {
 		  kiosk.addCustomer(Integer.parseInt(txtID.getText()), txtName.getText(), Integer.parseInt(txtBalance.getText()));
+		  
+		  // set a confirmation message and clear the fields for a new customer to be added
 		  txtAddCustomerMessage.setText("Customer added");
+		  txtID.setText("");
+		  txtName.setText("");
+		  txtBalance.setText("");
 	  }
 	  
 }

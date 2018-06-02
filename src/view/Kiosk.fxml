@@ -40,7 +40,7 @@
       </HBox>
       <HBox prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Button id="btnExploreCatalogue" minHeight="200.0" minWidth="200.0" mnemonicParsing="false" styleClass="largeButton" text="Explore Catalogue" wrapText="true">
+            <Button id="btnExploreCatalogue" minHeight="200.0" minWidth="200.0" mnemonicParsing="false" onAction="#exploreCatalogue" styleClass="largeButton" text="Explore Catalogue" wrapText="true">
                <HBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </HBox.margin>
@@ -48,7 +48,7 @@
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button id="btnCustomerRecord" minHeight="200.0" minWidth="200.0" mnemonicParsing="false" styleClass="largeButton" text="Customer Record" wrapText="true">
+            <Button id="btnCustomerRecord" minHeight="200.0" minWidth="200.0" mnemonicParsing="false" onAction="#showCustomerRecord" styleClass="largeButton" text="Customer Record" wrapText="true">
                <font>
                   <Font size="18.0" />
                </font>
@@ -56,7 +56,7 @@
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </HBox.margin>
             </Button>
-            <Button id="btnTopUpCustomer" minHeight="200.0" minWidth="200.0" mnemonicParsing="false" styleClass="largeButton" text="Top-up Account" wrapText="true">
+            <Button id="btnTopUpCustomer" minHeight="200.0" minWidth="200.0" mnemonicParsing="false" onAction="#topUpCustomer" styleClass="largeButton" text="Top-up Account" wrapText="true">
                <font>
                   <Font size="18.0" />
                </font>
@@ -64,7 +64,7 @@
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </HBox.margin>
             </Button>
-            <Button id="btn_top_up_customer" minHeight="200.0" minWidth="200.0" mnemonicParsing="false" styleClass="largeButton" text="Top-up Account" wrapText="true">
+            <Button id="btnFavoruiteCustomer" minHeight="200.0" minWidth="200.0" mnemonicParsing="false" onAction="#showFavoriteCustomer" styleClass="largeButton" text="Top-up Account" wrapText="true">
                <font>
                   <Font size="18.0" />
                </font>

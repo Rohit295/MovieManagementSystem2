@@ -2,6 +2,7 @@ package controller;
 import java.io.IOException;
 
 import au.edu.uts.ap.javafx.Controller;
+import au.edu.uts.ap.javafx.ViewLoader;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -25,22 +26,20 @@ public class KioskController extends Controller<Kiosk> {
   }
   public final Kiosk getKiosk() {
         return model;
-    }
+  }
+  
+  public final Stage getStage() {
+	  return stage;
+  }
 
   
   @FXML 
   void openAdministration(ActionEvent event) {
 		try {
-			// Open the Admin Window and Close the Main Library window
-			// ref: https://stackoverflow.com/questions/15041760/javafx-open-new-window
-			// ref: https://stackoverflow.com/questions/10486731/how-to-create-a-modal-window-in-javafx-2-1
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Admin.fxml"));
 			Parent mainView = loader.load();
-			
-			// Controller will need the Library object to act on things, pass it in
-			// ref: https://stackoverflow.com/questions/27965401/passing-parameters-between-two-javafx-controllers
 			AdminController adminController = (AdminController) loader.getController();
-			adminController.setKisok(kiosk);
+			adminController.setKisok(getKiosk());
 			
 			// set up the view now and run it
 	    	Scene mainScene = new Scene(mainView);
@@ -50,6 +49,9 @@ public class KioskController extends Controller<Kiosk> {
 	    	stage.initModality(Modality.WINDOW_MODAL);
 	    	stage.initOwner(((Node)event.getSource()).getScene().getWindow());
 	    	stage.show();
+
+	    	//ViewLoader.showStage(getKiosk(), "/view/Admin.fxml", "Administration Menu", new Stage());
+
 		} catch(IOException ioe) {
 			System.out.println(ioe.getMessage());			
 		}

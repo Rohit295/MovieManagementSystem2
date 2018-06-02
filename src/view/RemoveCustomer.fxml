@@ -10,7 +10,7 @@
 <?import javafx.scene.control.cell.*?>
 <?import javafx.scene.image.*?>
 
-<VBox prefHeight="300.0" prefWidth="400.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="controller.RemoveCustomerController">
+<VBox alignment="CENTER" prefHeight="300.0" prefWidth="400.0" spacing="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RemoveCustomerController">
 
 
     <stylesheets>
@@ -24,5 +24,8 @@
             <TableColumn fx:id="tblColCustomerBalance" prefWidth="75.0" text="Column X" />
         </columns>
       </TableView>
+      <TextArea fx:id="txtRemoveCustomerMessage" minHeight="50.0" prefHeight="50.0" />
+      <Button fx:id="btnRemoveCustomer" onAction="#removeCustomer" mnemonicParsing="false" text="Remove Customer" />
+      <Button fx:id="btnCloseRemoveCustomer" mnemonicParsing="false" text="Exit" />
    </children>
 </VBox>

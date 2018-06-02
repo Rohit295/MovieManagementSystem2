@@ -75,7 +75,7 @@
                               <Insets bottom="5.0" right="10.0" top="5.0" />
                            </VBox.margin>
                         </Button>
-                        <Button layoutX="20.0" layoutY="75.0" id="btnRemoveMovie" onAction="#removeCustomer" mnemonicParsing="false" styleClass="menuButton" text="Remove">
+                        <Button layoutX="20.0" layoutY="75.0" id="btnRemoveMovie" onAction="#removeMovie" mnemonicParsing="false" styleClass="menuButton" text="Remove">
                            <VBox.margin>
                               <Insets bottom="5.0" right="10.0" top="5.0" />
                            </VBox.margin>

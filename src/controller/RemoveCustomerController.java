@@ -1,5 +1,6 @@
 package controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
@@ -20,6 +21,11 @@ public class RemoveCustomerController  {
 	@FXML private TableColumn<Customer, String> tblColCustomerName;
 	@FXML private TableColumn<Customer, String> tblColCustomerBalance;
 	
+	@FXML private Button btnRemoveCustomer;
+	@FXML private Button btnCloseRemoveCustomer;
+	@FXML private TextArea txtRemoveCustomerMessage ;
+		
+	
 	public void setKisok(Kiosk kiosk) {
 		this.kiosk = kiosk;
 	}
@@ -36,4 +42,22 @@ public class RemoveCustomerController  {
 		tblCustomers.setItems(kiosk.getCustomers());
 	}
 
+	
+	  @FXML 
+	  void removeCustomer(ActionEvent event) {
+		  int selectedIndex = tblCustomers.getSelectionModel().getSelectedIndex();
+		  if (selectedIndex != -1) {
+			  // ensure the customer does not have a movie rented out currently
+			  Customer selectedCustomer = kiosk.getCustomers().get(selectedIndex);
+			  if (selectedCustomer.hasCurrentlyRented()) {
+				  txtRemoveCustomerMessage.setText("Customer has currently rented movie and cannot be removed.");		
+			  } else {
+				  kiosk.getCustomers().remove(selectedIndex);
+				  txtRemoveCustomerMessage.setText("Customer " + selectedCustomer.getName() + " has been removed");
+			  }
+		  }
+		  else {
+			  txtRemoveCustomerMessage.setText("Please select a customer to remove first");
+		  }
+	  }
 }

@@ -143,4 +143,13 @@ public class Customer {
         return this.rentingHistory;
     }
 
+    public boolean hasCurrentlyRented() {
+		if (currentlyRented.size() != 0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+
 }

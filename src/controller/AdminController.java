@@ -40,4 +40,49 @@ public class AdminController {
 				System.out.println(ioe.getMessage());			
 			}		  
 	  }
+
+	  @FXML 
+	  void addMovie(ActionEvent event) {
+			try {
+				FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/AddMovie.fxml"));
+				Parent mainView = loader.load();
+				
+				AddMovieController addMovieController = (AddMovieController) loader.getController();
+				addMovieController.setKisok(kiosk);
+				
+				// set up the view now and run it
+		    	Scene mainScene = new Scene(mainView);
+		    	Stage stage = new Stage();
+		    	stage.setTitle("Add Movie");
+		    	stage.setScene(mainScene);
+		    	stage.initModality(Modality.WINDOW_MODAL);
+		    	stage.initOwner(((Node)event.getSource()).getScene().getWindow());
+		    	stage.show();
+			} catch(IOException ioe) {
+				System.out.println(ioe.getMessage());			
+			}		  
+	  }
+
+	  @FXML 
+	  void removeCustomer(ActionEvent event) {
+			try {
+				FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/RemoveCustomer.fxml"));
+				Parent mainView = loader.load();
+				
+				RemoveCustomerController removeCustomerController = (RemoveCustomerController) loader.getController();
+				removeCustomerController.setKisok(kiosk);
+				removeCustomerController.buildCustomerList();
+				
+				// set up the view now and run it
+		    	Scene mainScene = new Scene(mainView);
+		    	Stage stage = new Stage();
+		    	stage.setTitle("Remove customer");
+		    	stage.setScene(mainScene);
+		    	stage.initModality(Modality.WINDOW_MODAL);
+		    	stage.initOwner(((Node)event.getSource()).getScene().getWindow());
+		    	stage.show();
+			} catch(IOException ioe) {
+				System.out.println(ioe.getMessage());			
+			}		  
+	  }
 }

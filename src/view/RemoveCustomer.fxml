@@ -10,10 +10,19 @@
 <?import javafx.scene.control.cell.*?>
 <?import javafx.scene.image.*?>
 
-<VBox xmlns:fx="http://javafx.com/fxml">
+<VBox prefHeight="300.0" prefWidth="400.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="controller.RemoveCustomerController">
 
 
     <stylesheets>
-        <URL value="@kiosk.css"/>
+        <URL value="@kiosk.css" />
     </stylesheets>
+   <children>
+      <TableView fx:id="tblCustomers" prefHeight="200.0" prefWidth="200.0">
+        <columns>
+          <TableColumn fx:id="tblColCustomerID" prefWidth="75.0" text="C1" />
+          <TableColumn fx:id="tblColCustomerName" prefWidth="75.0" text="C2" />
+            <TableColumn fx:id="tblColCustomerBalance" prefWidth="75.0" text="Column X" />
+        </columns>
+      </TableView>
+   </children>
 </VBox>

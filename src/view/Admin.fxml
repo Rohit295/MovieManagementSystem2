@@ -51,7 +51,7 @@
                               <Insets bottom="5.0" right="10.0" top="5.0" />
                            </VBox.margin>
                         </Button>
-                        <Button layoutX="20.0" layoutY="75.0" mnemonicParsing="false" styleClass="menuButton" text="Remove">
+                        <Button layoutX="20.0" layoutY="75.0" id="btnRemoveCustomer" onAction="#removeCustomer" mnemonicParsing="false" styleClass="menuButton" text="Remove">
                            <VBox.margin>
                               <Insets bottom="5.0" right="10.0" top="5.0" />
                            </VBox.margin>
@@ -70,12 +70,12 @@
                               <Insets bottom="5.0" right="10.0" top="5.0" />
                            </VBox.margin>
                         </Button>
-                        <Button mnemonicParsing="false" styleClass="menuButton" text="Add">
+                        <Button id="btnAddMovie" onAction="#addMovie" mnemonicParsing="false" styleClass="menuButton" text="Add">
                            <VBox.margin>
                               <Insets bottom="5.0" right="10.0" top="5.0" />
                            </VBox.margin>
                         </Button>
-                        <Button layoutX="20.0" layoutY="75.0" mnemonicParsing="false" styleClass="menuButton" text="Remove">
+                        <Button layoutX="20.0" layoutY="75.0" id="btnRemoveMovie" onAction="#removeCustomer" mnemonicParsing="false" styleClass="menuButton" text="Remove">
                            <VBox.margin>
                               <Insets bottom="5.0" right="10.0" top="5.0" />
                            </VBox.margin>

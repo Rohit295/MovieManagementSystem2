@@ -86,3 +86,8 @@
 *:focused {
     -fx-focus-color: #f07746;
 }
+
+Text {
+    -fx-fill: #757575;
+}
+

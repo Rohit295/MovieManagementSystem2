@@ -54,12 +54,12 @@
             <TextField fx:id="txtBalance" GridPane.columnIndex="1" GridPane.rowIndex="2" />
          </children>
       </GridPane>
-      <Button id="btnAddCustomer" onAction="#addCustomer" mnemonicParsing="false" text="Add Customer">
+      <Button fx:id="btnAddCustomer" onAction="#addCustomer" mnemonicParsing="false" text="Add Customer">
          <VBox.margin>
             <Insets bottom="10.0" />
          </VBox.margin>
       </Button>
-      <Button mnemonicParsing="false" text="Button">
+      <Button fx:id="btnCloseAddCustomer" mnemonicParsing="false" text="Close">
          <VBox.margin>
             <Insets bottom="10.0" />
          </VBox.margin>

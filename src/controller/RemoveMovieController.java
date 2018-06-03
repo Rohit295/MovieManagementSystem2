@@ -53,11 +53,11 @@ public class RemoveMovieController {
 			  Movie movieToRemove = kiosk.getCatalogue().getAvailableMovies().get(selectedIndex);
 			  kiosk.getCatalogue().getAvailableMovies().remove(selectedIndex);
 			  txtRemoveMovieMessage.setText(movieToRemove.getTitle() + " removed from catalogue");
-	  }
-	  else {
-		  txtRemoveMovieMessage.setText("Please select a movie to remove first");
 		  }
-	  }
+		  else {
+			  txtRemoveMovieMessage.setText("Please select a movie to remove first");
+			  }
+		  }
 
 
 }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import java.net.*?>
 <?import java.util.*?>
@@ -10,10 +11,54 @@
 <?import javafx.scene.control.cell.*?>
 <?import javafx.scene.image.*?>
 
-<VBox xmlns:fx="http://javafx.com/fxml">
+<VBox alignment="CENTER" minWidth="600.0" spacing="5.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RentMovieController">
 
-  
+    
     <stylesheets>
-        <URL value="@kiosk.css"/>
+        <URL value="@kiosk.css" />
     </stylesheets>
+	<children>
+		<HBox>
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@movie_icon.png" />
+               </image>
+            </ImageView>
+            <Label styleClass="h1" text="Rent a Movie">
+               <HBox.margin>
+                  <Insets top="50.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      	</HBox>
+      <HBox alignment="CENTER" prefWidth="200.0" spacing="20.0">
+         <children>
+            <Label text="Customer ID:">
+            </Label>
+            <TextField fx:id="txtCustomerID" prefWidth="100.0" />
+            <Button fx:id="btnSelectCustomer" mnemonicParsing="false" onAction="#showAvailableMovies" text="Select Customer" />
+         </children>
+         <VBox.margin>
+            <Insets bottom="20.0" />
+         </VBox.margin>
+      </HBox>
+      <Label styleClass="h2" text="Available Movies">
+         <VBox.margin>
+            <Insets bottom="10.0" />
+         </VBox.margin>
+      </Label>
+      <TableView prefHeight="200.0" prefWidth="200.0">
+        <columns>
+          <TableColumn fx:id="tblColMovieTitle" prefWidth="250.0" text="Title" />
+          <TableColumn fx:id="tblColMovieYear" prefWidth="75.0" text="Year" />
+          <TableColumn fx:id="tblColMovieGenre" prefWidth="75.0" text="Genre" />
+          <TableColumn fx:id="tblColMoviePrice" prefWidth="75.0" text="Price" />
+        </columns>
+      </TableView>
+      <TextArea prefHeight="50.0" prefWidth="200.0" />
+      <Button fx:id="btnRentSelectedMovie" onAction="#rentSelectedMovie" mnemonicParsing="false" text="Rent Selected Movie" />
+      <Button mnemonicParsing="false" text="Close" />
+	</children>
+	
 </VBox>

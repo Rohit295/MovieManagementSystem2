@@ -7,6 +7,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 import model.Customer;
 import model.Kiosk;
 import model.Movie;
@@ -59,5 +60,9 @@ public class RemoveMovieController {
 			  }
 		  }
 
+	  @FXML 
+	  void closeRemoveMovie(ActionEvent event) {
+		  ((Stage)btnCloseRemoveMovie.getScene().getWindow()).close();
+	  }
 
 }

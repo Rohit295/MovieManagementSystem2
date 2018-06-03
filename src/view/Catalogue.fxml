@@ -35,7 +35,7 @@
                   <Label styleClass="h2" text="View Movies:" />
                   <Button mnemonicParsing="false" styleClass="menuButton" text="All Movies" />
                   <Button mnemonicParsing="false" styleClass="menuButton" text="Available Movies" />
-                  <Button mnemonicParsing="false" styleClass="menuButton" text="Movies by Genre" />
+                  <Button onAction="#showMoviesByGenre" mnemonicParsing="false" styleClass="menuButton" text="Movies by Genre" />
                   <Button mnemonicParsing="false" styleClass="menuButton" text="Movies by Year" />
                </children>
             </VBox>

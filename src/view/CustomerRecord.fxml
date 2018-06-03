@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import java.net.*?>
 <?import java.util.*?>
@@ -10,12 +11,11 @@
 <?import javafx.scene.control.cell.*?>
 <?import javafx.scene.image.*?>
 
-<VBox alignment="CENTER" minWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CustomerRecordController">
-
-    
+<VBox alignment="CENTER" minWidth="600.0" spacing="5.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CustomerRecordController">
     <stylesheets>
-        <URL value="@kiosk.css"/>
+        <URL value="@kiosk.css" />
     </stylesheets>
+
 	<children>
 		<HBox>
          <children>
@@ -24,13 +24,51 @@
                   <Image url="@movie_icon.png" />
                </image>
             </ImageView>
-            <Label styleClass="h1" text="Favourite Movies">
+            <Label styleClass="h1" text="Customer Record">
                <HBox.margin>
                   <Insets top="50.0" />
                </HBox.margin>
             </Label>
          </children>
       	</HBox>
+      <HBox alignment="CENTER" prefWidth="200.0" spacing="20.0">
+         <children>
+            <Label text="Customer ID:">
+            </Label>
+            <TextField fx:id="txtCustomerID" prefWidth="100.0" />
+            <Button fx:id="btnSelectCustomer" mnemonicParsing="false" onAction="#showCustomerRecord" text="Select Customer" />
+         </children>
+         <VBox.margin>
+            <Insets bottom="20.0" />
+         </VBox.margin>
+      </HBox>
+
+      <Label styleClass="h2" text="Rented Movies">
+         <VBox.margin>
+            <Insets bottom="10.0" />
+         </VBox.margin>
+      </Label>
+      <TableView fx:id="tblRentedMovies" prefHeight="200.0" prefWidth="200.0">
+        <columns>
+          <TableColumn fx:id="tblColMovieTitle" prefWidth="250.0" text="Title" />
+          <TableColumn fx:id="tblColMovieYear" prefWidth="75.0" text="Year" />
+          <TableColumn fx:id="tblColMovieGenre" prefWidth="75.0" text="Genre" />
+          <TableColumn fx:id="tblColMoviePrice" prefWidth="75.0" text="Price" />
+        </columns>
+      </TableView>
+
+      <Label styleClass="h2" text="Renting History">
+         <VBox.margin>
+            <Insets bottom="10.0" />
+         </VBox.margin>
+      </Label>
+      <TableView fx:id="tblRentingHistory" prefHeight="200.0" prefWidth="200.0">
+        <columns>
+          <TableColumn fx:id="tblColRentingHistoryMovieTitle" prefWidth="250.0" text="Title" />
+          <TableColumn fx:id="tblColRentingHistoryMovieYear" prefWidth="75.0" text="Year" />
+          <TableColumn fx:id="tblColRentingHistoryMovieGenre" prefWidth="75.0" text="Genre" />
+          <TableColumn fx:id="tblColRentingHistoryMoviePrice" prefWidth="75.0" text="Price" />
+        </columns>
+      </TableView>	
 	</children>
-	
 </VBox>

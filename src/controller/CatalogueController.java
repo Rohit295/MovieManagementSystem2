@@ -21,6 +21,27 @@ public class CatalogueController {
 	}
 	
 	@FXML 
+	void showMoviesByGenre(ActionEvent event) {
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/ShowMoviesByGenre.fxml"));
+			Parent mainView = loader.load();
+			ShowMoviesByGenreController showMoviesByGenreController = (ShowMoviesByGenreController) loader.getController();
+			showMoviesByGenreController.setKisok(kiosk);
+			showMoviesByGenreController.buildGenresList();
+			
+			// set up the view now and run it
+			Scene mainScene = new Scene(mainView);
+			Stage stage = new Stage();
+			stage.setTitle("Movies by Genre");
+			stage.setScene(mainScene);
+			stage.initOwner(((Node)event.getSource()).getScene().getWindow());
+			stage.show();
+		} catch(IOException ioe) {
+			System.out.println(ioe.getMessage());			
+		}		
+	}
+	
+	@FXML 
 	void rentAMovie(ActionEvent event) {
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/RentMovie.fxml"));
@@ -54,7 +75,6 @@ public class CatalogueController {
 			Stage stage = new Stage();
 			stage.setTitle("Return a Movie");
 			stage.setScene(mainScene);
-			stage.initModality(Modality.WINDOW_MODAL);
 			stage.initOwner(((Node)event.getSource()).getScene().getWindow());
 			stage.show();
 		} catch(IOException ioe) {

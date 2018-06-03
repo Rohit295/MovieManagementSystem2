@@ -78,13 +78,46 @@ public class KioskController extends Controller<Kiosk> {
 		}
   }
 
-  @FXML 
-  void showCustomerRecord(ActionEvent event) {
-  }
+	@FXML 
+	void showCustomerRecord(ActionEvent event) {
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/CustomerRecord.fxml"));
+			Parent mainView = loader.load();
+			CustomerRecordController customerRecordController = (CustomerRecordController) loader.getController();
+			customerRecordController.setKisok(getKiosk());
+			
+			// set up the view now and run it
+			Scene mainScene = new Scene(mainView);
+			Stage stage = new Stage();
+			stage.setTitle("Patron Record");
+			stage.setScene(mainScene);
+			stage.initOwner(((Node)event.getSource()).getScene().getWindow());
+			stage.show();
+		} catch(IOException ioe) {
+			System.out.println(ioe.getMessage());			
+		}
+	}
 
-  @FXML 
-  void topUpCustomer(ActionEvent event) {
-  }
+	@FXML 
+	void topUpCustomer(ActionEvent event) {
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/TopUpAccount.fxml"));
+			Parent mainView = loader.load();
+			TopUpAccountController topUpAccountController = (TopUpAccountController) loader.getController();
+			topUpAccountController.setKisok(getKiosk());
+			
+			// set up the view now and run it
+			Scene mainScene = new Scene(mainView);
+			Stage stage = new Stage();
+			stage.setTitle("Account Top-Up");
+			stage.setScene(mainScene);
+			stage.initModality(Modality.WINDOW_MODAL);
+			stage.initOwner(((Node)event.getSource()).getScene().getWindow());
+			stage.show();
+		} catch(IOException ioe) {
+			System.out.println(ioe.getMessage());			
+		}
+	}
 
 	@FXML 
 	void showFavoriteCustomer(ActionEvent event) {

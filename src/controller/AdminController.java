@@ -33,7 +33,6 @@ public class AdminController {
 		    	Stage stage = new Stage();
 		    	stage.setTitle("Add Customer");
 		    	stage.setScene(mainScene);
-		    	stage.initModality(Modality.WINDOW_MODAL);
 		    	stage.initOwner(((Node)event.getSource()).getScene().getWindow());
 		    	stage.show();
 			} catch(IOException ioe) {
@@ -55,7 +54,6 @@ public class AdminController {
 		    	Stage stage = new Stage();
 		    	stage.setTitle("Add Movie");
 		    	stage.setScene(mainScene);
-		    	stage.initModality(Modality.WINDOW_MODAL);
 		    	stage.initOwner(((Node)event.getSource()).getScene().getWindow());
 		    	stage.show();
 			} catch(IOException ioe) {
@@ -78,7 +76,6 @@ public class AdminController {
 		    	Stage stage = new Stage();
 		    	stage.setTitle("Remove customer");
 		    	stage.setScene(mainScene);
-		    	stage.initModality(Modality.WINDOW_MODAL);
 		    	stage.initOwner(((Node)event.getSource()).getScene().getWindow());
 		    	stage.show();
 			} catch(IOException ioe) {
@@ -101,7 +98,6 @@ public class AdminController {
 		    	Stage stage = new Stage();
 		    	stage.setTitle("Remove Movie");
 		    	stage.setScene(mainScene);
-		    	stage.initModality(Modality.WINDOW_MODAL);
 		    	stage.initOwner(((Node)event.getSource()).getScene().getWindow());
 		    	stage.show();
 			} catch(IOException ioe) {

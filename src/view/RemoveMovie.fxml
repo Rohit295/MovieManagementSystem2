@@ -27,6 +27,6 @@
       </TableView>
       <TextArea fx:id="txtRemoveMovieMessage" minHeight="50.0" prefHeight="50.0" />
       <Button fx:id="btnRemoveMovie" onAction="#removeMovie" mnemonicParsing="false" text="Remove Movie" />
-      <Button fx:id="btnCloseRemoveMovie" mnemonicParsing="false" text="Exit" />
+      <Button fx:id="btnCloseRemoveMovie" onAction="#closeRemoveMovie" mnemonicParsing="false" text="Exit" />
    </children>
 </VBox>

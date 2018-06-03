@@ -8,6 +8,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 import model.Customer;
 import model.Kiosk;
 
@@ -58,5 +59,10 @@ public class RemoveCustomerController  {
 		  else {
 			  txtRemoveCustomerMessage.setText("Please select a customer to remove first");
 		  }
+	  }
+	  
+	  @FXML 
+	  void closeRemoveCustomer(ActionEvent event) {
+		  ((Stage)btnRemoveCustomer.getScene().getWindow()).close();
 	  }
 }

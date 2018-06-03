@@ -36,6 +36,4 @@ public class AddMovieController  {
 		  txtGenre.setText("");
 		  txtPrice.setText("");
 	  }
-	  
-
 }

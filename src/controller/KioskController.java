@@ -69,8 +69,25 @@ public class KioskController extends Controller<Kiosk> {
   void topUpCustomer(ActionEvent event) {
   }
 
-  @FXML 
-  void showFavoriteCustomer(ActionEvent event) {
-  }
+	@FXML 
+	void showFavoriteCustomer(ActionEvent event) {
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/FavouriteMovies.fxml"));
+			Parent mainView = loader.load();
+			FavouriteMoviesController favouriteMoviesController = (FavouriteMoviesController) loader.getController();
+			favouriteMoviesController.setKisok(getKiosk());
+			
+			// set up the view now and run it
+			Scene mainScene = new Scene(mainView);
+			Stage stage = new Stage();
+			stage.setTitle("Favourites");
+			stage.setScene(mainScene);
+			stage.initModality(Modality.WINDOW_MODAL);
+			stage.initOwner(((Node)event.getSource()).getScene().getWindow());
+			stage.show();
+		} catch(IOException ioe) {
+			System.out.println(ioe.getMessage());			
+		}
+	}
 
 }

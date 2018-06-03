@@ -12,7 +12,6 @@ import model.Customer;
 import model.Kiosk;
 
 public class RemoveCustomerController  {
-
 	private Kiosk kiosk;
 	
 	@FXML private TableView<Customer> tblCustomers;

@@ -10,10 +10,27 @@
 <?import javafx.scene.control.cell.*?>
 <?import javafx.scene.image.*?>
 
-<VBox xmlns:fx="http://javafx.com/fxml">
+<VBox alignment="CENTER" minWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CustomerRecordController">
 
     
     <stylesheets>
         <URL value="@kiosk.css"/>
     </stylesheets>
+	<children>
+		<HBox>
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@movie_icon.png" />
+               </image>
+            </ImageView>
+            <Label styleClass="h1" text="Favourite Movies">
+               <HBox.margin>
+                  <Insets top="50.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      	</HBox>
+	</children>
+	
 </VBox>

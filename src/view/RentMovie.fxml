@@ -56,7 +56,7 @@
           <TableColumn fx:id="tblColMoviePrice" prefWidth="75.0" text="Price" />
         </columns>
       </TableView>
-      <TextArea prefHeight="50.0" prefWidth="200.0" />
+      <TextArea fx:id="txtRentMovieMessage" prefHeight="50.0" prefWidth="200.0" />
       <Button fx:id="btnRentSelectedMovie" onAction="#rentSelectedMovie" mnemonicParsing="false" text="Rent Selected Movie" />
       <Button mnemonicParsing="false" text="Close" />
 	</children>

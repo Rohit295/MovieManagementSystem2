@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.Customer;
@@ -24,6 +25,7 @@ public class RentMovieController {
 	@FXML private TableColumn<Customer, String> tblColMovieGenre;
 	@FXML private TableColumn<Customer, String> tblColMoviePrice;
 	
+	@FXML private TextArea txtRentMovieMessage;
 	@FXML private Button btnRentSelectedMovie;
 	@FXML private Button btnCloseRentMovie;
 
@@ -49,8 +51,14 @@ public class RentMovieController {
 		
 		int selectedIndex = tblAvailableMovies.getSelectionModel().getSelectedIndex();
 		if (selectedIndex != -1) {
-			Movie movieToRent = kiosk.getCatalogue().getAvailableMovies().get(selectedIndex);
-			kiosk.getCatalogue().rentMovieToCustomer(movieToRent, customerRentingMovie);
+			Movie movieToRent = tblAvailableMovies.getSelectionModel().getSelectedItem();
+
+			// does the customer have enough balance to rent a movie?
+			if (customerRentingMovie.getBalance() < movieToRent.getPrice()) {
+				txtRentMovieMessage.setText("Customer does not have funds to rent movie");
+				tblAvailableMovies.getSelectionModel().clearSelection();
+			} else
+				kiosk.getCatalogue().rentMovieToCustomer(movieToRent, customerRentingMovie);
 		}
 	}	
 }

@@ -46,8 +46,8 @@ public class CatalogueController {
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/ReturnMovie.fxml"));
 			Parent mainView = loader.load();
-			RentMovieController rentMovieController = (RentMovieController) loader.getController();
-			rentMovieController.setKisok(kiosk);
+			ReturnMovieController returnMovieController = (ReturnMovieController) loader.getController();
+			returnMovieController.setKisok(kiosk);
 			
 			// set up the view now and run it
 			Scene mainScene = new Scene(mainView);

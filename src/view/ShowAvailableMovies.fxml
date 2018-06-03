@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import java.net.*?>
 <?import java.util.*?>
@@ -9,12 +10,36 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.control.cell.*?>
 
-<VBox xmlns:fx="http://javafx.com/fxml">
+<VBox alignment="CENTER" prefHeight="400.0" prefWidth="500.0" spacing="10.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="controller.ShowAvailableMoviesController">
 
-    
-
+  
     <stylesheets>
-        <URL value="@kiosk.css"/>
+        <URL value="@kiosk.css" />
     </stylesheets>
+   <children>
+	      <HBox>
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@movie_icon.png" />
+               </image>
+            </ImageView>
+            <Label styleClass="h1" text="Available Movies">
+               <HBox.margin>
+                  <Insets top="50.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
 
+      <TableView fx:id="tblMovies" prefHeight="200.0" prefWidth="200.0">
+        <columns>
+          <TableColumn fx:id="tblColMovieTitle" prefWidth="250.0" text="Title" />
+          <TableColumn fx:id="tblColMovieYear" prefWidth="75.0" text="Year" />
+          <TableColumn fx:id="tblColMovieGenre" prefWidth="75.0" text="Genre" />
+          <TableColumn fx:id="tblColMoviePrice" prefWidth="75.0" text="Price" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnCloseRemoveMovie" mnemonicParsing="false" onAction="#closeRemoveMovie" text="Exit" />
+   </children>
 </VBox>

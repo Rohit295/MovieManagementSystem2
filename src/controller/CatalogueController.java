@@ -21,6 +21,28 @@ public class CatalogueController {
 	}
 	
 	@FXML 
+	void showAvailableMovies(ActionEvent event) {
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/ShowAvailableMovies.fxml"));
+			Parent mainView = loader.load();
+			ShowAvailableMoviesController showAvailableMoviesController = (ShowAvailableMoviesController) loader.getController();
+			showAvailableMoviesController.setKisok(kiosk);
+			showAvailableMoviesController.buildMovieList();;
+			
+			// set up the view now and run it
+			Scene mainScene = new Scene(mainView);
+			Stage stage = new Stage();
+			stage.setTitle("Available Movies");
+			stage.setScene(mainScene);
+			stage.initOwner(((Node)event.getSource()).getScene().getWindow());
+			stage.show();
+		} catch(IOException ioe) {
+			System.out.println(ioe.getMessage());			
+		}		
+	}
+	
+	
+	@FXML 
 	void showMoviesByGenre(ActionEvent event) {
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/ShowMoviesByGenre.fxml"));

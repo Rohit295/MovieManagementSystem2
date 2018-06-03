@@ -59,6 +59,23 @@ public class KioskController extends Controller<Kiosk> {
   
   @FXML 
   void exploreCatalogue(ActionEvent event) {
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Catalogue.fxml"));
+			Parent mainView = loader.load();
+			CatalogueController catalogueController = (CatalogueController) loader.getController();
+			catalogueController.setKisok(getKiosk());
+			
+			// set up the view now and run it
+			Scene mainScene = new Scene(mainView);
+			Stage stage = new Stage();
+			stage.setTitle("Catalogue");
+			stage.setScene(mainScene);
+			stage.initModality(Modality.WINDOW_MODAL);
+			stage.initOwner(((Node)event.getSource()).getScene().getWindow());
+			stage.show();
+		} catch(IOException ioe) {
+			System.out.println(ioe.getMessage());			
+		}
   }
 
   @FXML 

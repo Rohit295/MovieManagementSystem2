@@ -48,7 +48,7 @@
             <Insets bottom="10.0" />
          </VBox.margin>
       </Label>
-      <TableView prefHeight="200.0" prefWidth="200.0">
+      <TableView fx:id="tblFavouriteMovies" prefHeight="200.0" prefWidth="200.0">
         <columns>
           <TableColumn fx:id="tblColMovieTitle" prefWidth="250.0" text="Title" />
           <TableColumn fx:id="tblColMovieYear" prefWidth="75.0" text="Year" />
